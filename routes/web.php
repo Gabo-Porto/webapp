@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CadastrarController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CadastrarControllerController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +16,8 @@ Route::get('/dashboard', function () {
 Route::get('/cadastrar', function () {
     return view('cadastrar');
 })->middleware(['auth', 'verified'])->name('cadastrar');
+
+Route::post('/cadastrar', [CadastrarController::class, 'salvar']) ->middleware(['auth', 'verified'])->name('cadastrar');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
