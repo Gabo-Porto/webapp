@@ -21,6 +21,11 @@
                         {{ __('Cadastrar') }}
                     </x-nav-link>
                 </div>
+                  <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('data-xml')" target="_blank">
+                        {{ __('XML') }}
+                    </x-nav-link>
+                </div>
             </div>
 
             <!-- Settings Dropdown -->
@@ -81,6 +86,12 @@
                 {{ __('Cadastro') }}
             </x-responsive-nav-link>
         </div>
+         <div class="pt-2 pb-3 space-y-1">
+            <x-responsive-nav-link :href="route('cadastrar')" target="_blank">
+                {{ __('XML') }}
+            </x-responsive-nav-link>
+        </div>
+
         <!-- Responsive Settings Options -->
         <div class="pt-4 pb-1 border-t border-gray-200">
             <div class="px-4">
